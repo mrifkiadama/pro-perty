@@ -3,7 +3,7 @@ import AsyncFetch from '../api/AsyncFetch'
 import Slider from "react-slick";
 import millify from 'millify';
 import { Card } from 'react-bootstrap';
-import {Container, Col} from 'react-bootstrap';
+import {Container, Col, Row} from 'react-bootstrap';
 import Pilihan from '../assets/icon_content/Group 417.png';
 
 
@@ -91,10 +91,17 @@ class ProdukUnggulan extends Component {
          <Col xs={12} md={12}>
             <div className="content" style={{display:'fixed',marginTop:'-10%'}}>
               <div style={{marginLeft:-20, marginRight:-20}}>
-                <h3 style={{float:"left",paddingRight:690}}><img style={{width:45,height:45, marginRight:10, marginLeft:20}} src={Pilihan} alt="logo"/> Produk Unggulan</h3>
-                <h6 style={{paddingTop:10}}><a href="#/ListIklan">Lihat Semua</a></h6>
+              <Container>
+               <Row>
+               <Col>
+                <h3 style={{float:"left",width:300}}><img style={{width:45,height:45, marginRight:10, marginLeft:20}} src={Pilihan} alt="logo"/> Produk Unggulan</h3>
+               </Col>
+               <Col> 
+                <h6 style={{paddingTop:10, float:'right'}}><a href="#ListIklan?alamat=semua&cari=">Lihat Semua</a></h6>
+               </Col>
+               </Row>
                 <br/>
-
+              </Container>
           <Container>
     <div style={{paddingBottom:30}}>
         { ! this.state.isLoad && <label>Loading ... </label> }
@@ -109,7 +116,9 @@ class ProdukUnggulan extends Component {
                  
                     <Card.Body>
                         <Card.Title style={{fontWeight:50,float:'left'}}>{(value.title.substring(0,60))}</Card.Title>
-                        <Card.Subtitle className="mb-2 text-muted" style={{float:'left',width:'100%'}}>{value.alamat}</Card.Subtitle>
+                        <br/>
+                        <br/>
+                        <Card.Subtitle className="mb-2 text-muted" style={{float:'left'}}>{value.alamat}</Card.Subtitle>
                         <Card.Title style={{color: '#3D87F3',marginTop:25, marginBottom:25, fontWeight:500, float: 'right'}}>
                         Rp {this.ambilangka(value.harga)}
                             <h2 style={{fontSize:15, color: '#95a5a6', float: 'right', marginLeft:10}}> {this.nego(value.nego)}</h2>

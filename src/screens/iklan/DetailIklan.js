@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Container, Row, Col} from 'react-bootstrap';
 import { Badge,Image,Button} from 'react-bootstrap';
-import Tanah from '../../../assets/icon_detail_iklan/luas_tanah.png'
-import Tidur from '../../../assets/icon_detail_iklan/kamar_tidur.png'
-import Pilihan from '../../../assets/icon_content/Group 417.png';
+import Tanah from '../../assets/icon_detail_iklan/luas_tanah.png'
+import Tidur from '../../assets/icon_detail_iklan/kamar_tidur.png'
+import Pilihan from '../../assets/icon_content/Group 417.png';
 
 export default class DetailIklan extends Component {
   render () {

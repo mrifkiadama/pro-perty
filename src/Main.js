@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import { Route, HashRouter } from "react-router-dom";
+import { Route, HashRouter,Redirect } from "react-router-dom";
 import {Container, Row} from 'react-bootstrap';
 
 
 import Header from './components/Header'
 import ProdukUnggulan from './screens/ProdukUnggulan'
 import ListIklan from './screens/iklan/ListIklan';
+import DetailIklan from './screens/iklan/DetailIklan';
 import Footer from './components/Footer';
  
 class Main extends Component {
@@ -22,9 +23,9 @@ class Main extends Component {
             <Container>
                 <Row>
                     <Route exact path="/" component={ProdukUnggulan}/>
+                    <Route exact path="/ListIklan" component={ProdukUnggulan}/>
                     <Route exact path="/ListIklan" component={ListIklan}/>
-                    {/* <Route exact path="/ListIklan" component={ListIklan}/>
-                     <Route exact path="/DetailIklan" component={DetailIklan}/> */}
+                     <Route exact path="/DetailIklan" component={DetailIklan}/> 
                 </Row>
             </Container>
             

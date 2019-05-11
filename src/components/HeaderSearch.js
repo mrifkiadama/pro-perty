@@ -52,7 +52,6 @@ constructor(props) {
    <Container style={{marginBottom:-20}} >
  
               <Navbar.Brand style={{color: 'white'}}>
-               <center><h2>PROperty</h2></center>
                 
               </Navbar.Brand>
               <Navbar bg="none" style={{marginLeft:-15,marginRight:-15}}>
@@ -105,7 +104,7 @@ constructor(props) {
                               </i>
                               </InputGroup.Text>
                           </InputGroup.Prepend>
-                          <FormControl placeholder="Cari Kata Kunci.." aria-label="Username" onKeyDown={this._handleFind} 
+                          <FormControl placeholder="Cari Kata Kunci.." aria-label="Username" onClick={this._handleFind} 
                           onChange={this.handleChange.bind(this)}
                            id="icon_search" />
                       </InputGroup>
