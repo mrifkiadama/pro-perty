@@ -93,7 +93,7 @@ componentWillReceiveProps(nextProps) {
     if (this.state.data && this.state.data.length) {
        return (
             <React.Fragment>
-            <HeaderSearch/>
+         
 
     <ScrollToTop/>
                 <Container style={{display: 'flex', paddingLeft:10}} >

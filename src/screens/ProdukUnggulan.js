@@ -94,7 +94,7 @@ class ProdukUnggulan extends Component {
               <Container>
                <Row>
                <Col>
-                <h3 style={{float:"left",width:300}}><img style={{width:45,height:45, marginRight:10, marginLeft:20}} src={Pilihan} alt="logo"/> Produk Unggulan</h3>
+                <h4 style={{float:"left",width:300}}><img style={{width:35,height:35, marginRight:10, marginLeft:20}} src={Pilihan} alt="logo"/> Produk Unggulan</h4>
                </Col>
                <Col> 
                 <h6 style={{paddingTop:10, float:'right'}}><a href="#ListIklan?alamat=semua&cari=">Lihat Semua</a></h6>
