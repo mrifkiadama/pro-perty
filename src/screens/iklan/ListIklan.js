@@ -96,9 +96,10 @@ componentWillReceiveProps(nextProps) {
          
 
     <ScrollToTop/>
-                <Container style={{display: 'flex', paddingLeft:10}} >
+            <ProdukUnggulan/>
+                <Container  style={{display: 'flex', paddingLeft:10,paddingRight:10}} >
                   
-                <div style={{marginLeft:15}}>
+                <div className="content">
                 <Row>
         { ! this.state.isLoad && <label>Loading ... </label> }
        
@@ -106,7 +107,7 @@ componentWillReceiveProps(nextProps) {
 
             <React.Fragment key={value.id}>
               <center>
-             <Card style={{ width: '17rem',margin:5}} id={'ListIklan'}>
+             <Card style={{ width: '16rem',margin:10}} id={'ListIklan'}>
                     
                         <Card.Img  variant="top" src={value.foto} onError={(e) => {
                         e.target.src = 'https://increasify.com.au/wp-content/uploads/2016/08/default-image.png' // some replacement image
@@ -123,7 +124,7 @@ componentWillReceiveProps(nextProps) {
                         Rp {this.ambilangka(value.harga)}
                             <h2 style={{fontSize:15, color: '#95a5a6', float: 'right', marginLeft:10}}> {this.nego(value.nego)}</h2>
                         </Card.Title>
-                       <a href="#/ListIklan">
+                       <a href="#/DetailIklan">
                         <Button  variant="outline-warning" style={{ width: '100%', height: '30%', justifyContent: 'center', alignItems: 'center'}}>
                         Hubungi Penjual</Button>
                         </a>

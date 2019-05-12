@@ -23,7 +23,7 @@ class Main extends Component {
             <Container>
                 <Row>
                     <Route exact path="/" component={ProdukUnggulan}/>
-                    <Route exact path="/ListIklan" component={ProdukUnggulan}/>
+                    <Route exact path="/ProdukUnggulan" component={ProdukUnggulan}/>
                     <Route exact path="/ListIklan" component={ListIklan}/>
                      <Route exact path="/DetailIklan" component={DetailIklan}/> 
                 </Row>
