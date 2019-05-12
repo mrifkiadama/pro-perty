@@ -35,7 +35,7 @@ export default class DetailIklan extends Component {
       let cari='cari='+params.cari
       let id ='&id='+params.id
       this.setState({url:url_api+cari+id})
-      console.log(this.state.url_data)
+    
   }
 
     async componentDidMount(){
@@ -49,6 +49,7 @@ export default class DetailIklan extends Component {
       })
 
     this.setState({harga:this.state.data.harga})
+      console.log(this.state.url)
   }
   cek_nego(e){
     if(e==="true"){

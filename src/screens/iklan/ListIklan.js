@@ -112,7 +112,7 @@ componentWillReceiveProps(nextProps) {
               <center>
              <Card style={{ width: '17rem',margin:5}} id={'ListIklan'}>
                     
-                        <Card.Img  variant="top" src={value.foto} onError={(e) => {
+                        <Card.Img  style={{height:200}} variant="top" src={value.foto} onError={(e) => {
                         e.target.src = 'https://increasify.com.au/wp-content/uploads/2016/08/default-image.png' // some replacement image
                          }} />
                  

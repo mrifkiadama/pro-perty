@@ -116,7 +116,7 @@ class ProdukUnggulan extends Component {
                       state: 'flushDeal' }}  style={{textDecoration: 'none'}}>   
                 <Card style={{ width: '22rem',margin:5}}>
                     
-                        <Card.Img  variant="top" src={value.foto} 
+                        <Card.Img  variant="top" style={{height:200}} src={value.foto} 
                         onError={(e) => {
                                  e.target.src = 'https://increasify.com.au/wp-content/uploads/2016/08/default-image.png' // some replacement image
                                  }} 
