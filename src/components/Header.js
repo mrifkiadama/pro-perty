@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import { Route, HashRouter,Redirect, Link } from "react-router-dom";
+import {Link } from "react-router-dom";
 import {Navbar, Form, FormControl, 
-  Dropdown,
   Container,
-  DropdownButton, ListGroup,
+  ListGroup,
   Popover, OverlayTrigger,
   InputGroup,Button} from 'react-bootstrap';
 import queryString from 'query-string';
@@ -73,16 +72,17 @@ constructor(props) {
    <Container style={{marginBottom:-20}} >
              <center>
              <a href="/" style={{textDecoration: 'none'}}>
-             <h1 style={{color: 'white',fontWeight:'bold',paddingTop:30}}>PROperty</h1>
+             <h1 style={{color: 'white',fontWeight:'bold',paddingTop:30}}>PROperty.com</h1>
              </a>
              </center>
              <center><span style={{color:'white'}}>Nikmati kemudahan bertransaksi property</span></center>
    
               <Navbar.Brand ></Navbar.Brand>
-              <Navbar bg="none" style={{marginLeft:30,marginRight:-10}}>
+              <center>
+              <Navbar bg="none" style={{marginLeft:0,marginRight:-10}}>
           
                   <Form inline style={{width:'100%',marginRight:-15}}>
-                      <InputGroup  size="lg" className="mb-3" style={{marginRight:10, width:400}}>
+                      <InputGroup  size="lg" className="mb-3" style={{marginRight:10, width:420}}>
                           <InputGroup.Prepend>
                               <InputGroup.Text id="icon_search" style={{backgroundColor: 'white'}}>
                               <i className="material-icons">location_on</i>
@@ -95,7 +95,7 @@ constructor(props) {
                           
                       </InputGroup>                 
 
-                      <InputGroup size="lg" className="mb-3" style={{width:600}}>
+                      <InputGroup size="lg" className="mb-3" style={{width:650}}>
                           <InputGroup.Prepend>
                               <InputGroup.Text id="icon_search" style={{backgroundColor: 'white'}}>
                               <i className="material-icons">
@@ -108,7 +108,7 @@ constructor(props) {
                            id="icon_search" /> 
                       <Link to={{ pathname: '/ListIklan',
                       search:'?alamat='+this.state.alamat+'&cari='+this.state.title,
-                      state: 'flushDeal' }}>   
+                      state: 'flushDeal' }}  style={{textDecoration: 'none'}}>   
                       <InputGroup.Append>
                           <Button style={{color:'white', height:49, width:80}} variant='warning'
                           onChange={this.handleChange.bind(this)}
@@ -118,7 +118,8 @@ constructor(props) {
                       
                       </InputGroup>
                   </Form>
-              </Navbar>          
+              </Navbar>
+              </center>          
             </Container>
             )
   }

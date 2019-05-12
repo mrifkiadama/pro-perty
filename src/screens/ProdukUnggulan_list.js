@@ -3,12 +3,12 @@ import AsyncFetch from '../api/AsyncFetch'
 import Slider from "react-slick";
 import millify from 'millify';
 import { Card } from 'react-bootstrap';
-import {Container, Col, Row, Badge} from 'react-bootstrap';
+import {Container, Col, Row, Badge, Button} from 'react-bootstrap';
 import Pilihan from '../assets/icon_content/Group 417.png';
 import {Link } from "react-router-dom";
 
 
-class ProdukUnggulan extends Component {
+class ProdukUnggulan_list extends Component {
 
 
   state = {
@@ -59,7 +59,7 @@ class ProdukUnggulan extends Component {
                dots: true,
                infinite: true,
                speed: 300,
-               slidesToShow: 3,
+               slidesToShow: 4,
                slidesToScroll: 4,
                autoplay: true,
                autoplaySpeed: 3000,
@@ -96,9 +96,7 @@ class ProdukUnggulan extends Component {
                <Col>
                 <h5 style={{foat:"left",width:300}}><img style={{width:35,height:35, marginRight:10, marginLeft:0}} src={Pilihan} alt="logo"/> Produk Unggulan</h5>
                </Col>
-               <Col> 
-                <h6 style={{paddingTop:10, float:'right'}}><a href="#ListIklan?alamat=semua&cari="  style={{textDecoration: 'none'}}>Lihat Semua</a></h6>
-               </Col>
+               
                </Row>
                 <br/>
               </Container>
@@ -110,13 +108,12 @@ class ProdukUnggulan extends Component {
 
             <React.Fragment key={value.id}>
               <center>
-   
-                    <Link to={{ pathname: '/DetailIklan',
+                       <Link to={{ pathname: '/DetailIklan',
                       search:'?cari='+value.title+'&id='+value.id,
-                      state: 'flushDeal' }}  style={{textDecoration: 'none'}}>   
-                <Card style={{ width: '22rem',margin:5}}>
+                      state: 'flushDeal' }}  style={{textDecoration: 'none'}}> 
+                <Card style={{ width: '16rem',margin:5}}>
                     
-                        <Card.Img  variant="top" src={value.foto} 
+                    <Card.Img  variant="top" src={value.foto} 
                         onError={(e) => {
                                  e.target.src = 'https://increasify.com.au/wp-content/uploads/2016/08/default-image.png' // some replacement image
                                  }} 
@@ -129,30 +126,28 @@ class ProdukUnggulan extends Component {
                               </Card.Title>
                             </Card.ImgOverlay>
                     <Card.Body>
-                        <Card.Title style={{fontWeight:50,float:'left'}}>
-
-                        {(value.title.substring(0,30)+'..')}
-                      
-                        
+                        <Card.Title style={{fontWeight:300,float:'left'}}>
+                        <h6 style={{fontWeight:400,fontSize:'1.1rem'}} className="text_title">
+                        {(value.title.substring(0,25)+'..')}
+                        </h6>
                         </Card.Title>
                         <br/>
                         <br/>
                         <Card.Subtitle className="mb-2 text-muted" style={{float:'left',marginTop:-20}}>{value.alamat}</Card.Subtitle>
                         <br/>
-                        <Card.Title style={{color: '#3D87F3',marginTop:25, marginBottom:25, fontWeight:500, float: 'right'}}> 
+                        <Card.Title style={{color: '#3D87F3',marginTop:25, marginBottom:25, fontWeight:500, float: 'left'}}>
                         Rp {this.ambilangka(value.harga)}
                             <h2 style={{fontSize:15, color: '#95a5a6', float: 'right', marginLeft:10}}> {this.nego(value.nego)}</h2>
                         </Card.Title>
-                        
-                        <h2 style={{fontSize:15, color: '#95a5a6', float: 'left', marginTop:25, marginLeft:5}}> <i className="material-icons" style={{fontSize:15}}>waves</i> {value.luas}</h2>
-                        
-                        <h2 style={{fontSize:15, color: '#95a5a6', float: 'left', marginTop:25, marginLeft:5}}><i className="material-icons" style={{fontSize:15}}>event_note</i> {value.sertifikasi}</h2>
-                    
+                   
+                        <Button  variant="outline-warning" style={{ width: '100%', height: '30%', justifyContent: 'center', alignItems: 'center'}}>
+                        Hubungi Penjual</Button>
+                   
                         
                     </Card.Body>
 
                 </Card>
-                  </Link>
+                     </Link>
                 </center>
             </React.Fragment>
 
@@ -169,4 +164,4 @@ class ProdukUnggulan extends Component {
   }
 }
  
-export default ProdukUnggulan;
+export default ProdukUnggulan_list;
