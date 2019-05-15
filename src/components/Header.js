@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import {Link } from "react-router-dom";
-import {Navbar, Form, FormControl, 
+import {Navbar, Form, FormControl,
   Container,
   ListGroup,
   Popover, OverlayTrigger,
   InputGroup,Button} from 'react-bootstrap';
 import queryString from 'query-string';
+import logo from "../assets/KPTI PNG.png";
+
 
 
 export default class Header extends Component {
@@ -72,11 +74,12 @@ constructor(props) {
    <Container style={{marginBottom:-20}} >
              <center>
              <a href="/" style={{textDecoration: 'none'}}>
-             <h1 style={{color: 'white',fontWeight:'bold',paddingTop:30}}>PROperty.com</h1>
+             <img src={logo} alt="Logo" style={{width:320,marginTop:40}}/>;
+             {/* <h1 style={{color: 'white',fontWeight:'bold',paddingTop:30}}>PROperty.com</h1> */}
              </a>
              </center>
-             <center><span style={{color:'white'}}>Nikmati kemudahan bertransaksi property</span></center>
-   
+             {/* <center><span style={{color:'white'}}>Nikmati kemudahan bertransaksi property</span></center>
+    */}
               <Navbar.Brand ></Navbar.Brand>
               <center>
               <Navbar bg="none" style={{marginLeft:0,marginRight:-10}}>
@@ -110,7 +113,7 @@ constructor(props) {
                       search:'?alamat='+this.state.alamat+'&cari='+this.state.title,
                       state: 'flushDeal' }}  style={{textDecoration: 'none'}}>   
                       <InputGroup.Append>
-                          <Button style={{color:'white', height:49, width:80}} variant='warning'
+                          <Button style={{color:'white', height:49, width:120}} variant='danger'
                           onChange={this.handleChange.bind(this)}
                           >Cari</Button>
                         </InputGroup.Append>

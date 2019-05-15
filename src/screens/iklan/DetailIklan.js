@@ -28,6 +28,7 @@ export default class DetailIklan extends Component {
 
   async componentWillMount() {
      let url_ku = this.props.location.search;
+     console.log(url_ku);
      let params = queryString.parse(url_ku);
      console.log(params);
       console.log(params.cari)
@@ -35,6 +36,8 @@ export default class DetailIklan extends Component {
       let cari='cari='+params.cari
       let id ='&id='+params.id
       this.setState({url:url_api+cari+id})
+
+    
     
   }
 
@@ -70,9 +73,12 @@ export default class DetailIklan extends Component {
   render () {
    const nilai = (this.state.data.harga)
       console.log(nilai)
-
+      let url_ku = this.props.location.search;
       const images = this.state.data.gambar
-
+      const waLink= 'https://wa.me/+6285729629468?text='
+      const url="www.XXXX.com"
+      const contact =waLink+"Saya Tertarik dengan Property<"+url+url_ku
+      console.log(contact)
       return (
             <React.Fragment>
 
@@ -160,8 +166,8 @@ export default class DetailIklan extends Component {
 
                   <Col xs={12} md={3} style={{padding:0}}>
                     <div className="content"style={{padding:0, paddingBottom:20}}>
-                          <Col xs={12} md={12} style={{background:"#3D87F3",paddingLeft:20, paddingTop:20, paddingBottom:20}}>
-                            <h3 style={{color:'#FFC107'}}>Dijual</h3>
+                          <Col xs={12} md={12} style={{background:"#f09712",paddingLeft:20, paddingTop:20, paddingBottom:20}}>
+                            <h3 style={{color:'white'}}>Dijual</h3>
                             <h4 style={{color:'white'}}>Rp {this.ambilangka(this.state.harga)} </h4>  
                           </Col>
                           <Col xs={12} md={12} style={{paddingTop:20}}>
@@ -186,7 +192,9 @@ export default class DetailIklan extends Component {
                             <Button variant="outline-secondary" style={{width:'100%', marginBottom:10}} disabled>Kirim Pesan</Button>
                             </Col>
                           <Col>
-                            <Button variant="warning" style={{width:'100%',color:'white'}}><b>Hubungi Penjual</b></Button>
+                            <Button variant="danger" style={{width:'100%',color:'white'}}>
+                             <a href={contact} > <b style={{color:'white'}}>Hubungi Penjual</b></a>
+                            </Button>
                             </Col>
                     </div>   
                   </Col>
