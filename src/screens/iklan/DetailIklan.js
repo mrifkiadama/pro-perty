@@ -72,12 +72,18 @@ export default class DetailIklan extends Component {
   }
   render () {
    const nilai = (this.state.data.harga)
+
       console.log(nilai)
       let url_ku = this.props.location.search;
+      console.log(url_ku);
+      let params = queryString.parse(url_ku);
+      let cari='cari='+params.cari
+      let id ='&id='+params.id
       const images = this.state.data.gambar
-      const waLink= 'https://wa.me/+6285729629468?text='
-      const url="www.XXXX.com"
-      const contact =waLink+"Saya Tertarik dengan Property<"+url+url_ku
+      const texts='?text='
+      const waLink= 'https://wa.me/'+this.state.data.nomor_hp+texts
+      const url="www.kpti.com/#DetailIklan?"
+      const contact =waLink+"Saya Tertarik dengan Property :"+url+cari+id
       console.log(contact)
       return (
             <React.Fragment>
@@ -177,7 +183,7 @@ export default class DetailIklan extends Component {
                                     <img style={{width:45,height:45, marginRight:10, marginLeft:10}} src={Tanah}  alt="Luas Tanah"/>
                                     </Col>
                                     <Col md={9}>
-                                    <span>Property Today<br/>
+                                    <span>{this.state.data.penjual}<br/>
                                        <i className="material-icons"  style={{float:'left', color:'#95a5a6', fontSize:16}}>
                                 location_on
                                 </i>
@@ -235,7 +241,7 @@ export default class DetailIklan extends Component {
                       <Col xs={12} md={2} style={{marginRight:0, marginLeft:0, paddingLeft:0, paddingRight:0}}>
                       <span><b>Deskripsi</b></span>
                       </Col>
-                      <Col xs={12} md={4} style={{marginRight:0,paddingLeft:-0,float:'left'}}>
+                      <Col xs={12} md={8} style={{marginRight:0,paddingLeft:-0,float:'left'}}>
                              {this.state.data.keterangan}
                             </Col>
                       </Row>
