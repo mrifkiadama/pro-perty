@@ -11,7 +11,6 @@ import queryString from 'query-string';
 import "react-image-gallery/styles/css/image-gallery.css";
 import millify from 'millify';
 
-import Footer1 from '../../components/Footer1';
 
 import ScrollToTop from 'react-router-scroll-top'   
 export default class DetailIklan extends Component {
@@ -94,28 +93,61 @@ export default class DetailIklan extends Component {
               <Container style={{marginTop:'-10%'}}>
                 <Row>
                   <Col xs={12} md={9}>
-                    <div className="content">
-                        <Row>
-                            <Col xs={12} md={6} style={{paddingBottom:0}}>
-                               <Row style={{listStyleType: "none",paddingLeft:15, color:'#95a5a6' }}>
-                              
-                              <li style={{paddingTop:5}}>
+                    <div className="content" >
+                        <Row xs={12} md={12} style={{listStyleType: "none",paddingLeft:15, color:'#95a5a6',fontSize:12,marginTop:-15}}>
+                          <Col xs={12} md={6} >
+                            <Row>
+                            <li style={{paddingTop:5}}>
                               <span style={{fontSize:15}}>
                               Home
-                              <i className="material-icons" style={{fontSize:15}}>
+                              <i className="material-icons" style={{fontSize:11}}>
                                   chevron_right
                               </i> {this.state.data.kategori}</span></li>
-                              <li style={{paddingTop:5}}><span><i className="material-icons" style={{fontSize:15}}>
+                              <li style={{paddingTop:5}}>
+                              <span style={{fontSize:15}}>
+                              <i className="material-icons" style={{fontSize:11}}>
                                   chevron_right
                               </i> <Moment format="D MMM YYYY" withTitle>
                                 {this.state.data.date}
                                   </Moment></span></li>
-                              <li style={{paddingTop:5}}><span><i className="material-icons" style={{fontSize:15}}>
+                              <li style={{paddingTop:5}}>
+                              <span style={{fontSize:15}}><i className="material-icons" style={{fontSize:11}}>
                                   chevron_right
                               </i> {this.state.data.provinsi}</span></li>
-                            </Row>
+                              </Row>
+                          </Col>
+                             
+                           <Col xs={12} md={6}>
+                            <Row>
+                            <li style={{paddingTop:5}}>
+                              <span style={{fontSize:15}}>
+                              <i className="material-icons" style={{fontSize:11}}>
+                                  format_list_bulleted
+                              </i> {this.state.data.kategori}</span></li>
+                              <li style={{paddingTop:5,marginLeft:15}}>
+                              <span style={{fontSize:15}}>
+                              <i className="material-icons" style={{fontSize:11}}>
+                                  access_time
+                              </i> <Moment format="D MMM YYYY" withTitle>
+                                {this.state.data.date}
+                                  </Moment></span></li>
+                              <li style={{paddingTop:5,marginLeft:15}}>
+                              <span style={{fontSize:15}}><i className="material-icons" style={{fontSize:11}}>
+                                  location_on
+                              </i> {this.state.data.provinsi}</span></li>
+                    
+                              </Row>
+                          </Col>
+
+                        </Row>
+                              
+                              
+                            
+
+                        <Row>
+                            <Col xs={12} md={6} style={{paddingBottom:0,marginTop:0,paddingTop:10}}>
                                
-                               <Image src="" fluid />
+                               
                                 <ImageGallery items={images} lazyLoad={true} useTranslate3D={false} showBullets={false} showNav={false} showPlayButton={false} className="caraousel_image" 
                                  onError={(e) => {
                                  e.target.src = 'https://increasify.com.au/wp-content/uploads/2016/08/default-image.png' // some replacement image
@@ -124,26 +156,10 @@ export default class DetailIklan extends Component {
                                
                             </Col> 
 
-                            <Col xs={12} md={6} style={{background:'white'}}>
-                            <Row style={{listStyleType: "none",paddingLeft:15, color:'#95a5a6' }}>
-                              
-                              <li style={{marginRight:20}}>
-                              <span style={{fontSize:15}}>
-                              <i className="material-icons" style={{fontSize:15}}>
-                                  format_list_bulleted
-                              </i> {this.state.data.kategori}</span></li>
-                              <li style={{marginRight:20}}><span><i className="material-icons" style={{fontSize:15}}>
-                                  access_time
-                              </i> <Moment format="D MMM YYYY" withTitle>
-                                {this.state.data.date}
-                                  </Moment></span></li>
-                              <li style={{marginRight:20}}><span><i className="material-icons" style={{fontSize:15}}>
-                                  location_on
-                              </i> {this.state.data.provinsi}</span></li>
-                            </Row>
-                                <h4>{this.state.data.title}</h4>
-                                <h6 style={{fontSize:14 , color:'#95a5a6'}}>{this.state.data.alamat}</h6>
-                                
+                            <Col xs={12} md={6} style={{background:'white',paddingTop:10}}>                            
+                                <h4 style={{fontSize:18}}>{this.state.data.title}</h4>
+                                <h6 style={{fontSize:14,paddingTop:10 , color:'#95a5a6'}}>{this.state.data.alamat}</h6>
+                                <hr/>
                                   <Button variant="outline-success">Tersedia</Button>
                                 <br/><br/>
                                 <h5>Spesifikasi Singkat</h5>
@@ -153,14 +169,14 @@ export default class DetailIklan extends Component {
                                         <Row>
                                         <img style={{width:45,height:45, marginRight:10, marginLeft:10}} src={Tanah}  alt="Luas Tanah"/>
                                         
-                                        <span>Luas Tanah<br/>{this.state.data.luas}</span>
+                                        <span style={{color:'#95a5a6',fontSize:14,marginLeft:10}}> Luas Tanah<br/><span style={{color:'#000000'}}>{this.state.data.luas}</span></span>
                                         </Row>
                                     </Col>
                                     <Col xs={12} md={6} style={{paddingBottom:10,padding:20}}>
                                          <Row>
                                         <img style={{width:45,height:45, marginRight:10, marginLeft:10}} src={Sertifikasi}  alt="Luas Tanah"/>
                                         
-                                        <span>Sertifikasi<br/>{this.state.data.sertifikasi}</span>
+                                        <span style={{color:'#95a5a6',fontSize:14,marginLeft:10}}>Sertifikasi<br/><span style={{color:'#000000'}}>{this.state.data.sertifikasi}</span></span>
                                         </Row>  
                                     </Col>
                                    
@@ -171,7 +187,7 @@ export default class DetailIklan extends Component {
                                 <i className="material-icons"  style={{float:'left', color:'#3D87F3'}}>
                                 flag  
                                 </i>
-                                 <h6 style={{float:'left',color:'#3D87F3'}}>Laporkan Iklan </h6>
+                                 <h6 style={{float:'left',color:'#cc0001'}}>Laporkan Iklan </h6>
                                 </Col>
                                 <Col>
                                 <h6 style={{float:'right', color:'#95a5a6'}}>
@@ -215,7 +231,7 @@ export default class DetailIklan extends Component {
 
                           </Col>
                           <Col>
-                            <Badge variant="info" style={{width:'100%', marginBottom:10,height:30, paddingTop:10}} >{this.state.data.nomor_hp}</Badge>
+                            <Badge variant="info" style={{width:'100%', marginBottom:10,height:40, paddingTop:10,}} >{this.state.data.nomor_hp}</Badge>
                             </Col>
                           <Col>
                             <Button variant="danger" style={{width:'100%',color:'white'}}>
@@ -229,39 +245,66 @@ export default class DetailIklan extends Component {
                     <div className="content">
                     <Col xs={12} md={12} style={{marginTop:0}}>
                         <div style={{marginLeft:-20, marginRight:-20, marginBottom:30, marginTop:0}}>
-                            <h4><img style={{width:25,height:25, marginTop:0, marginRight:10, marginLeft:0}} src={Pilihan}  alt="logo"/> Detail Property</h4>
+                            <h4><img style={{width:25,height:25, marginTop:0, marginRight:10, marginLeft:0}} src={Pilihan}  alt="logo"/> Detail Properti</h4>
                         </div>
                     </Col>
 
-                     <Col xs={12} md={12}>
-                        <Row>
+                     <Col xs={12} md={12} >
+                        <Row style={{marginLeft:22}}>
                             <Col xs={12} md={2} style={{marginRight:0, marginLeft:0, paddingLeft:0, paddingRight:0}}>
                             <span><b>Spesifikasi</b></span>
                             </Col>
-                            <Col xs={12} md={4} style={{marginRight:0,paddingLeft:-0,float:'left'}}>
-                              <ul  style={{listStyleType: "none", marginLeft:0, paddingLeft:0 }}>
-                              <li>Kategori       <span style={{marginLeft:30}}>: {this.state.data.kategori}</span></li>
-                              <li>Jenis Iklan    <span style={{marginLeft:15}}>: {this.cek_nego(this.state.data.nego)}</span></li>
-                              <li>Status         <span style={{marginLeft:46}}>: Tersedia</span></li>
-                              <li>Harga          <span style={{marginLeft:48}}>: Rp. {this.state.data.harga}</span></li>
-                              </ul>
-                            </Col>
-                            <Col xs={12} md={4} style={{marginRight:0,paddingLeft:-0,float:'left'}}>
-                              <ul  style={{listStyleType: "none", marginLeft:0, paddingLeft:0 }}>
-                              <li>Luas Tanah       <span style={{marginLeft:20}}>: {this.state.data.luas}M</span></li>
-                              <li>Sertifikasi      <span style={{marginLeft:34}}>: {this.state.data.sertifikasi}</span></li>
-                              </ul>
+                            <Col xs={12} md={10} style={{marginRight:0, marginLeft:0, paddingLeft:0, paddingRight:0}}>
+                              <Row xs={12} md={6} style={{marginRight:0,paddingLeft:-0}}>
+                                <Col xs={3} md={2}>
+                                <ul style={{listStyleType: "none", marginLeft:0, paddingLeft:0,fontSize:14,color:'#95a5a6'}}>
+                                  <li>Kategori</li>
+                                  <li>Jenis Iklan</li>
+                                  <li>Status</li>
+                                  <li>Harga</li>
+                                </ul>
+                                </Col>
+
+                                <Col xs={3} md={5}>
+                                <ul style={{listStyleType: "none", marginLeft:10, paddingLeft:0,fontSize:14,floar:'right'}}>
+                                  <li>: {this.state.data.kategori}</li>
+                                  <li>: {this.cek_nego(this.state.data.nego)}</li>
+                                  <li>: Tersedia</li>
+                                  <li>: Rp. {this.state.data.harga}</li>
+                                </ul>
+                                </Col>
+
+                                <Col xs={3} md={2}>
+                                <ul style={{listStyleType: "none", marginLeft:0, paddingLeft:0,fontSize:14,color:'#95a5a6'}}>
+                                  <li>Luas Tanah</li>
+                                  <li>Sertifikasi</li>
+                                  
+                                </ul>
+                                </Col>
+
+                                <Col xs={3} md={2}>
+                                <ul style={{listStyleType: "none", marginLeft:10, paddingLeft:0,fontSize:14,floar:'right'}}>
+                                  <li>: {this.state.data.luas}</li>
+                                  <li>: {this.cek_nego(this.state.data.nego)}</li>
+                                </ul>
+                                </Col>
+                                
+                                
+                                
+                                
+                              
+                              </Row>
                             </Col>
                         </Row>
                         
                     </Col>
                     <hr/>
                     <Col xs={12} md={12}>
-                     <Row>
+                     <Row style={{marginLeft:22}}>
                       <Col xs={12} md={2} style={{marginRight:0, marginLeft:0, paddingLeft:0, paddingRight:0}}>
                       <span><b>Deskripsi</b></span>
                       </Col>
-                      <Col xs={12} md={8} style={{marginRight:0,paddingLeft:-0,float:'left'}}>
+                      <Col xs={12} md={8} style={{marginRight:0,paddingLeft:-0,float:'left',fontSize:14,color:'#95a5a6'}}>
                              {this.state.data.keterangan}
                             </Col>
                       </Row>

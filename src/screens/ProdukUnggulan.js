@@ -114,7 +114,7 @@ class ProdukUnggulan extends Component {
                     <Link to={{ pathname: '/DetailIklan',
                       search:'?cari='+value.title+'&id='+value.id,
                       state: 'flushDeal' }}  style={{textDecoration: 'none'}}>   
-                <Card style={{ width: '22rem',margin:5}}>
+                <Card style={{ width: '22rem',margin:5,color:'#FCF4F4'}}>
                     
                         <Card.Img  variant="top" style={{height:200}} src={value.foto} 
                         onError={(e) => {
@@ -128,7 +128,7 @@ class ProdukUnggulan extends Component {
                               </Badge>
                               </Card.Title>
                             </Card.ImgOverlay>
-                    <Card.Body>
+                    <Card.Body style={{background:'#fcf4f4'}}>
                         <Card.Title style={{fontWeight:50,float:'left',color:'#000000'}}>
 
                         {(value.title.substring(0,25)+'..')}
