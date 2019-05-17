@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AsyncFetch from '../../api/AsyncFetch'
 import { Container, Row, Col} from 'react-bootstrap';
-import { Image,Button} from 'react-bootstrap';
+import { Image,Button,Badge} from 'react-bootstrap';
 import Tanah from '../../assets/icon_content/Group 459.png'
 import Sertifikasi from '../../assets/icon_content/Group 458.png'
 import Pilihan from '../../assets/icon_content/Group 417.png';
@@ -195,7 +195,7 @@ export default class DetailIklan extends Component {
 
                           </Col>
                           <Col>
-                            <Button variant="outline-secondary" style={{width:'100%', marginBottom:10}} disabled>Kirim Pesan</Button>
+                            <Badge variant="info" style={{width:'100%', marginBottom:10,height:30, paddingTop:10}} >{this.state.data.nomor_hp}</Badge>
                             </Col>
                           <Col>
                             <Button variant="danger" style={{width:'100%',color:'white'}}>
