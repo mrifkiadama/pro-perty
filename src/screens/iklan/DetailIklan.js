@@ -10,6 +10,7 @@ import Moment from 'react-moment';
 import queryString from 'query-string';
 import "react-image-gallery/styles/css/image-gallery.css";
 import millify from 'millify';
+import {Link } from "react-router-dom";
 
 
 import ScrollToTop from 'react-router-scroll-top'   
@@ -99,21 +100,26 @@ export default class DetailIklan extends Component {
                             <Row>
                             <li style={{paddingTop:5}}>
                               <span style={{fontSize:15}}>
+                              <Link to={'/'} style={{textDecoration: 'none',color:'grey'}}>  
                               Home
+                              </Link>
                               <i className="material-icons" style={{fontSize:11}}>
                                   chevron_right
-                              </i> {this.state.data.kategori}</span></li>
+                              </i> 
+                              <Link to={{ pathname: '/ListIklan',
+                      search:'?alamat='+this.state.data.kab+'&cari='}}  style={{textDecoration: 'none',color:'grey'}}>  
+                              {this.state.data.kab}
+                              </Link>
+                              </span></li>
                               <li style={{paddingTop:5}}>
                               <span style={{fontSize:15}}>
                               <i className="material-icons" style={{fontSize:11}}>
                                   chevron_right
-                              </i> <Moment format="D MMM YYYY" withTitle>
-                                {this.state.data.date}
-                                  </Moment></span></li>
+                              </i> {this.state.data.kategori}</span></li>
                               <li style={{paddingTop:5}}>
                               <span style={{fontSize:15}}><i className="material-icons" style={{fontSize:11}}>
                                   chevron_right
-                              </i> {this.state.data.provinsi}</span></li>
+                              </i> {this.state.data.penjual}</span></li>
                               </Row>
                           </Col>
                              
