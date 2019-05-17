@@ -25,11 +25,7 @@ class Main extends Component {
             <Container>
                 <Row>
                     <Route exact path="/" component={ProdukUnggulan}/>
-<<<<<<< HEAD
                     <Route exact path="/ProdukUnggulan" component={ProdukUnggulan}/>
-=======
-                    <Route exact path="/ListIklan" component={ProdukUnggulan_list}/>
->>>>>>> 89051cf6b8c34e6d993d8e63cae520cafea9cd79
                     <Route exact path="/ListIklan" component={ListIklan}/>
                      <Route exact path="/DetailIklan" component={DetailIklan}/> 
                 </Row>
