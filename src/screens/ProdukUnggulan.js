@@ -131,7 +131,7 @@ class ProdukUnggulan extends Component {
                     <Card.Body>
                         <Card.Title style={{fontWeight:50,float:'left'}}>
 
-                        {(value.title.substring(0,30)+'..')}
+                        {(value.title.substring(0,25)+'..')}
                       
                         
                         </Card.Title>
