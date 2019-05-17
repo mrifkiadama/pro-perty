@@ -416,6 +416,7 @@ export default class DetailIklan extends Component {
                         <Row style={{marginLeft:22}}>
                             <Col xs={12} md={2} style={{marginRight:0, marginLeft:0, paddingLeft:0, paddingRight:0}}>
                             <span><b>Spesifikasi</b></span>
+<<<<<<< HEAD
                             </Col>
                             <Col xs={12} md={10} style={{marginRight:0, marginLeft:0, paddingLeft:0, paddingRight:0}}>
                               <Row xs={12} md={6} style={{marginRight:0,paddingLeft:-0}}>
@@ -479,6 +480,49 @@ export default class DetailIklan extends Component {
                             <Col style={{marginLeft:-10}}>      
                               <h5 style={{fontSize:15,margin:0}}>Kamar Mandi</h5>
                               <span>Luas </span>
+=======
+                            </Col>
+                            <Col xs={12} md={10} style={{marginRight:0, marginLeft:0, paddingLeft:0, paddingRight:0}}>
+                              <Row xs={12} md={6} style={{marginRight:0,paddingLeft:-0}}>
+                                <Col xs={3} md={2}>
+                                <ul style={{listStyleType: "none", marginLeft:0, paddingLeft:0,fontSize:14,color:'#95a5a6'}}>
+                                  <li>Kategori</li>
+                                  <li>Jenis Iklan</li>
+                                  <li>Status</li>
+                                  <li>Harga</li>
+                                </ul>
+                                </Col>
+
+                                <Col xs={3} md={5}>
+                                <ul style={{listStyleType: "none", marginLeft:10, paddingLeft:0,fontSize:14,floar:'right'}}>
+                                  <li>: {this.state.data.kategori}</li>
+                                  <li>: {this.cek_nego(this.state.data.nego)}</li>
+                                  <li>: Tersedia</li>
+                                  <li>: Rp. {this.state.data.harga}</li>
+                                </ul>
+                                </Col>
+
+                                <Col xs={3} md={2}>
+                                <ul style={{listStyleType: "none", marginLeft:0, paddingLeft:0,fontSize:14,color:'#95a5a6'}}>
+                                  <li>Luas Tanah</li>
+                                  <li>Sertifikasi</li>
+                                  
+                                </ul>
+                                </Col>
+
+                                <Col xs={3} md={2}>
+                                <ul style={{listStyleType: "none", marginLeft:10, paddingLeft:0,fontSize:14,floar:'right'}}>
+                                  <li>: {this.state.data.luas} m<sup>2</sup></li>
+                                  <li>: {this.cek_nego(this.state.data.nego)}</li>
+                                </ul>
+                                </Col>
+                                
+                                
+                                
+                                
+                              
+                              </Row>
+>>>>>>> 89051cf6b8c34e6d993d8e63cae520cafea9cd79
                             </Col>
                           </Row>  
                       </Col>
@@ -513,6 +557,7 @@ export default class DetailIklan extends Component {
                         alt="Profil"
                       />
                     </Col>
+<<<<<<< HEAD
 <<<<<<< HEAD
                     <Col xs={12} md={6} style={{marginLeft:-40,marginTop:10,padding:10}}>
                         <h5 style={{margin:0}}>Mr.ABUD</h5>
@@ -576,6 +621,8 @@ export default class DetailIklan extends Component {
                      <h6>Sertifikasi  : <span>Rumah</span></h6>
                       
 =======
+=======
+>>>>>>> 89051cf6b8c34e6d993d8e63cae520cafea9cd79
                     <hr/>
                     <Col xs={12} md={12}>
                      <Row style={{marginLeft:22}}>
@@ -586,6 +633,9 @@ export default class DetailIklan extends Component {
                              {this.state.data.keterangan}
                             </Col>
                       </Row>
+<<<<<<< HEAD
+>>>>>>> 89051cf6b8c34e6d993d8e63cae520cafea9cd79
+=======
 >>>>>>> 89051cf6b8c34e6d993d8e63cae520cafea9cd79
                     </Col>
                   </Row>

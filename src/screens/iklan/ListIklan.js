@@ -97,19 +97,18 @@ componentWillReceiveProps(nextProps) {
          
 
     <ScrollToTop/>
-<<<<<<< HEAD
-            <ProdukUnggulan/>
+
                 <Container  style={{display: 'flex', paddingLeft:10,paddingRight:10}} >
                   
                 <div className="content">
-=======
+
               <center>  
                 <Container style={{ paddingLeft:10}} className="list_div_search">   
 
                 <div style={{marginLeft:15}} className="list_div_search">
                 <h5 style={{color:'#95a5a6'}}>Ditemukan : {this.state.data.length} Data</h5>
                 <br/>
->>>>>>> 89051cf6b8c34e6d993d8e63cae520cafea9cd79
+
                 <Row>
         { ! this.state.isLoad && <label>Loading ... </label> }
        
@@ -138,13 +137,14 @@ componentWillReceiveProps(nextProps) {
                         Rp {this.ambilangka(value.harga)}
                             <h2 style={{fontSize:15, color: '#95a5a6', float: 'right', marginLeft:10}}> {this.nego(value.nego)}</h2>
                         </Card.Title>
-<<<<<<< HEAD
-                       <a href="#/DetailIklan">
-=======
+
+                       
+
                         <Link to={{ pathname: '/DetailIklan',
                       search:'?cari='+value.title+'&id='+value.id,
                       state: 'flushDeal' }}  style={{textDecoration: 'none'}}>   
->>>>>>> 89051cf6b8c34e6d993d8e63cae520cafea9cd79
+
+              
                         <Button  variant="outline-warning" style={{ width: '100%', height: '30%', justifyContent: 'center', alignItems: 'center'}}>
                         Hubungi Penjual</Button>
                         </Link>
@@ -155,10 +155,14 @@ componentWillReceiveProps(nextProps) {
             </React.Fragment>
 
             )  }
+          
             </Row>
             </div>
           </Container>
+          
           </center>
+          </div>
+          </Container>
       </React.Fragment>
            
       );
