@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AsyncFetch from '../../api/AsyncFetch'
 import { Container, Row, Col} from 'react-bootstrap';
-import { Image,Button,Badge} from 'react-bootstrap';
+import { Button,Badge} from 'react-bootstrap';
 import Tanah from '../../assets/icon_content/Group 459.png'
 import Sertifikasi from '../../assets/icon_content/Group 458.png'
 import Pilihan from '../../assets/icon_content/Group 417.png';

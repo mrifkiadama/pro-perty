@@ -97,18 +97,12 @@ componentWillReceiveProps(nextProps) {
          
 
     <ScrollToTop/>
-
-                <Container  style={{display: 'flex', paddingLeft:10,paddingRight:10}} >
-                  
-                <div className="content">
-
               <center>  
                 <Container style={{ paddingLeft:10}} className="list_div_search">   
 
                 <div style={{marginLeft:15}} className="list_div_search">
                 <h5 style={{color:'#95a5a6'}}>Ditemukan : {this.state.data.length} Data</h5>
                 <br/>
-
                 <Row>
         { ! this.state.isLoad && <label>Loading ... </label> }
        
@@ -116,7 +110,7 @@ componentWillReceiveProps(nextProps) {
 
             <React.Fragment key={value.id}>
               <center>
-             <Card style={{ width: '16rem',margin:10}} id={'ListIklan'}>
+             <Card style={{ width: '17rem',margin:5}} id={'ListIklan'}>
                     
                         <Card.Img  style={{height:200}} variant="top" src={value.foto} onError={(e) => {
                         e.target.src = 'https://increasify.com.au/wp-content/uploads/2016/08/default-image.png' // some replacement image
@@ -137,14 +131,9 @@ componentWillReceiveProps(nextProps) {
                         Rp {this.ambilangka(value.harga)}
                             <h2 style={{fontSize:15, color: '#95a5a6', float: 'right', marginLeft:10}}> {this.nego(value.nego)}</h2>
                         </Card.Title>
-
-                       
-
                         <Link to={{ pathname: '/DetailIklan',
                       search:'?cari='+value.title+'&id='+value.id,
                       state: 'flushDeal' }}  style={{textDecoration: 'none'}}>   
-
-              
                         <Button  variant="outline-warning" style={{ width: '100%', height: '30%', justifyContent: 'center', alignItems: 'center'}}>
                         Hubungi Penjual</Button>
                         </Link>
@@ -155,14 +144,10 @@ componentWillReceiveProps(nextProps) {
             </React.Fragment>
 
             )  }
-          
             </Row>
             </div>
           </Container>
-          
           </center>
-          </div>
-          </Container>
       </React.Fragment>
            
       );
