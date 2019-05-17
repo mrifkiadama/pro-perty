@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import millify from 'millify';
-import { Card, Button, Container, Badge } from 'react-bootstrap';
-import ProdukUnggulan from '../ProdukUnggulan';
-import { Row, Col} from 'react-bootstrap';
-import HeaderSearch from '../../components/HeaderSearch'
+import { Card, Button, Container } from 'react-bootstrap';
+import { Row} from 'react-bootstrap';
+//import HeaderSearch from '../../components/HeaderSearch'
 import AsyncFetch from '../../api/AsyncFetch'
 import queryString from 'query-string';
-
 import ScrollToTop from 'react-router-scroll-top'   
+import Oops from '../../assets/oops.png'
+import {Link } from "react-router-dom";
 
 export default class ListIklan extends Component {
 
@@ -49,6 +49,7 @@ componentWillReceiveProps(nextProps) {
      window.location.reload();
     this.setState({
       isFlushed: true,
+      isLoad: true,
     }, () => this.componentWillMount(), this.componentDidMount(), this.setStateAsync())
   }
 }
@@ -56,12 +57,12 @@ componentWillReceiveProps(nextProps) {
 
   async componentWillMount() {
 
-     let url_ku = this.props.location.search;
+    let url_ku = this.props.location.search;
      let params = queryString.parse(url_ku);
      console.log(params);
       console.log(params.alamat)
-      let url_api='http://apiproday.herokuapp.com/api/v1/search?kategori=semua&kab=semua&'
-      let provinsi='provinsi='+params.alamat
+      let url_api='http://apiproday.herokuapp.com/api/v1/search?kategori=semua&provinsi=semua&'
+      let provinsi='kab='+params.alamat
       let cari ='&cari='+params.cari
       this.setState({url:url_api+provinsi+cari})
       console.log(this.state.url_data)
@@ -96,10 +97,19 @@ componentWillReceiveProps(nextProps) {
          
 
     <ScrollToTop/>
+<<<<<<< HEAD
             <ProdukUnggulan/>
                 <Container  style={{display: 'flex', paddingLeft:10,paddingRight:10}} >
                   
                 <div className="content">
+=======
+              <center>  
+                <Container style={{ paddingLeft:10}} className="list_div_search">   
+
+                <div style={{marginLeft:15}} className="list_div_search">
+                <h5 style={{color:'#95a5a6'}}>Ditemukan : {this.state.data.length} Data</h5>
+                <br/>
+>>>>>>> 89051cf6b8c34e6d993d8e63cae520cafea9cd79
                 <Row>
         { ! this.state.isLoad && <label>Loading ... </label> }
        
@@ -109,28 +119,37 @@ componentWillReceiveProps(nextProps) {
               <center>
              <Card style={{ width: '16rem',margin:10}} id={'ListIklan'}>
                     
-                        <Card.Img  variant="top" src={value.foto} onError={(e) => {
+                        <Card.Img  style={{height:200}} variant="top" src={value.foto} onError={(e) => {
                         e.target.src = 'https://increasify.com.au/wp-content/uploads/2016/08/default-image.png' // some replacement image
                          }} />
                  
-                    <Card.Body>
-
-                        <Badge variant="secondary" style={{float:'left'}}>{value.kategori}</Badge><br/>
-                        <Card.Title style={{fontWeight:540,float:'left'}}>{(value.title.substring(0,60))}</Card.Title>
+                       <Card.Body>
+                        <Card.Title style={{fontWeight:300,float:'left'}}>
+                        <h6 style={{fontWeight:400,fontSize:'1.1rem'}} className="text_title">
+                        {(value.title.substring(0,25)+'..')}
+                        </h6>
+                        </Card.Title>
+                        
                         <br/>
                         <br/>
-                        <Card.Subtitle className="mb-2 text-muted" style={{float:'left'}}>{value.alamat}</Card.Subtitle>
+                        <Card.Subtitle className="mb-2 text-muted" style={{float:'left',marginTop:-20}}>{value.alamat}</Card.Subtitle>
+                        <br/>
                         <Card.Title style={{color: '#3D87F3',marginTop:25, marginBottom:25, fontWeight:500, float: 'left'}}>
                         Rp {this.ambilangka(value.harga)}
                             <h2 style={{fontSize:15, color: '#95a5a6', float: 'right', marginLeft:10}}> {this.nego(value.nego)}</h2>
                         </Card.Title>
+<<<<<<< HEAD
                        <a href="#/DetailIklan">
+=======
+                        <Link to={{ pathname: '/DetailIklan',
+                      search:'?cari='+value.title+'&id='+value.id,
+                      state: 'flushDeal' }}  style={{textDecoration: 'none'}}>   
+>>>>>>> 89051cf6b8c34e6d993d8e63cae520cafea9cd79
                         <Button  variant="outline-warning" style={{ width: '100%', height: '30%', justifyContent: 'center', alignItems: 'center'}}>
                         Hubungi Penjual</Button>
-                        </a>
+                        </Link>
                         
                     </Card.Body>
-
                 </Card>
                 </center>
             </React.Fragment>
@@ -139,23 +158,21 @@ componentWillReceiveProps(nextProps) {
             </Row>
             </div>
           </Container>
+          </center>
       </React.Fragment>
            
       );
     }else {
        return (
            <React.Fragment>
-            <HeaderSearch/>
-
-    <ScrollToTop/>
                 <Container style={{display: 'flex', paddingLeft:10}} >
-                  
-                <div style={{marginLeft:15}}>
-                <Row>
+               <div style={{marginLeft:15}} className="list_div">
               <center>
-             ini
-                </center>
-            </Row>
+              <div className="show_not_found" style={{width:'100%'}}>
+                <img src={Oops} style={{width:200}} alt="logo"/>
+                <h2>Oops Data Masih Belum Ada </h2>
+              </div>
+              </center>
             </div>
           </Container>
       </React.Fragment>

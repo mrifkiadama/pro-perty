@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-import { Route, HashRouter,Redirect, Link } from "react-router-dom";
-import {Navbar, Form, FormControl, 
-  Dropdown,
+import {Link } from "react-router-dom";
+import {Navbar, Form, FormControl,
   Container,
-  DropdownButton, ListGroup,
+  ListGroup,
   Popover, OverlayTrigger,
   InputGroup,Button} from 'react-bootstrap';
 import queryString from 'query-string';
+import logo from "../assets/KPTI PNG.png";
+
 
 
 export default class Header extends Component {
@@ -60,12 +61,13 @@ constructor(props) {
 
    render() {
     const Pop_alamat = (
-  <Popover  title="Pilih Lokasi">
+ <Popover  title="Pilih Lokasi">
             <ListGroup variant="flush" id="alamat">
-              <ListGroup.Item onClick={() => this.setState({alamat:'semua'})}>Semua Lokasi</ListGroup.Item>
-              <ListGroup.Item onClick={() => this.setState({alamat:'yogyakarta'})}>Yogyakarta</ListGroup.Item>
-              <ListGroup.Item onClick={() => this.setState({alamat:'KulonProgo'})}>KulonProgo</ListGroup.Item>
-              <ListGroup.Item onClick={() => this.setState({alamat:'Bantul'})}>Bantul</ListGroup.Item>
+                <ListGroup.Item onClick={() => this.setState({alamat:'semua'})}>Semua Lokasi</ListGroup.Item>
+              <ListGroup.Item onClick={() => this.setState({alamat:'jogja'})}>Yogya Kota</ListGroup.Item>
+              <ListGroup.Item onClick={() => this.setState({alamat:'kulonprogo'})}>KulonProgo</ListGroup.Item>
+              <ListGroup.Item onClick={() => this.setState({alamat:'bantul'})}>Bantul</ListGroup.Item>
+              <ListGroup.Item onClick={() => this.setState({alamat:'bantul'})}>Sleman</ListGroup.Item>
             </ListGroup>
   </Popover>
     );
@@ -73,16 +75,18 @@ constructor(props) {
    <Container style={{marginBottom:-20}} >
              <center>
              <a href="/" style={{textDecoration: 'none'}}>
-             <h1 style={{color: 'white',fontWeight:'bold',paddingTop:30}}>PROperty</h1>
+             <img src={logo} alt="Logo" style={{width:320,marginTop:40}}/>;
+             {/* <h1 style={{color: 'white',fontWeight:'bold',paddingTop:30}}>PROperty.com</h1> */}
              </a>
              </center>
-             <center><span style={{color:'white'}}>Nikmati kemudahan bertransaksi property</span></center>
-   
+             {/* <center><span style={{color:'white'}}>Nikmati kemudahan bertransaksi property</span></center>
+    */}
               <Navbar.Brand ></Navbar.Brand>
-              <Navbar bg="none" style={{marginLeft:30,marginRight:-10}}>
+              <center>
+              <Navbar bg="none" style={{marginLeft:0,marginRight:-10}}>
           
                   <Form inline style={{width:'100%',marginRight:-15}}>
-                      <InputGroup  size="lg" className="mb-3" style={{marginRight:10, width:400}}>
+                      <InputGroup  size="lg" className="mb-3" style={{marginRight:10, width:420}}>
                           <InputGroup.Prepend>
                               <InputGroup.Text id="icon_search" style={{backgroundColor: 'white'}}>
                               <i className="material-icons">location_on</i>
@@ -95,7 +99,7 @@ constructor(props) {
                           
                       </InputGroup>                 
 
-                      <InputGroup size="lg" className="mb-3" style={{width:600}}>
+                      <InputGroup size="lg" className="mb-3" style={{width:650}}>
                           <InputGroup.Prepend>
                               <InputGroup.Text id="icon_search" style={{backgroundColor: 'white'}}>
                               <i className="material-icons">
@@ -108,9 +112,9 @@ constructor(props) {
                            id="icon_search" /> 
                       <Link to={{ pathname: '/ListIklan',
                       search:'?alamat='+this.state.alamat+'&cari='+this.state.title,
-                      state: 'flushDeal' }}>   
+                      state: 'flushDeal' }}  style={{textDecoration: 'none'}}>   
                       <InputGroup.Append>
-                          <Button style={{color:'white', height:49, width:80}} variant='warning'
+                          <Button style={{color:'white', height:49, width:120}} variant='danger'
                           onChange={this.handleChange.bind(this)}
                           >Cari</Button>
                         </InputGroup.Append>
@@ -118,7 +122,8 @@ constructor(props) {
                       
                       </InputGroup>
                   </Form>
-              </Navbar>          
+              </Navbar>
+              </center>          
             </Container>
             )
   }

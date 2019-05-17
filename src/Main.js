@@ -1,14 +1,16 @@
 import React, { Component } from "react";
-import { Route, HashRouter,Redirect } from "react-router-dom";
+import { Route, HashRouter } from "react-router-dom";
 import {Container, Row} from 'react-bootstrap';
 
 
 import Header from './components/Header'
 import ProdukUnggulan from './screens/ProdukUnggulan'
+import ProdukUnggulan_list from './screens/ProdukUnggulan_list'
 import ListIklan from './screens/iklan/ListIklan';
 import DetailIklan from './screens/iklan/DetailIklan';
 import Footer from './components/Footer';
- 
+ import Footer1 from './components/Footer1.js';
+
 class Main extends Component {
   render() {
     return (
@@ -19,11 +21,15 @@ class Main extends Component {
              
         </div>
 
-        <div className="main-content">
+        <div className="main-content" id="main_content">
             <Container>
                 <Row>
                     <Route exact path="/" component={ProdukUnggulan}/>
+<<<<<<< HEAD
                     <Route exact path="/ProdukUnggulan" component={ProdukUnggulan}/>
+=======
+                    <Route exact path="/ListIklan" component={ProdukUnggulan_list}/>
+>>>>>>> 89051cf6b8c34e6d993d8e63cae520cafea9cd79
                     <Route exact path="/ListIklan" component={ListIklan}/>
                      <Route exact path="/DetailIklan" component={DetailIklan}/> 
                 </Row>
@@ -39,7 +45,9 @@ class Main extends Component {
         </div>
 
         <div className="footer" >
-            <Footer/>
+                <Route exact path="/" component={Footer}/>
+                <Route exact path="/ListIklan" component={Footer}/>
+                 <Route exact path="/DetailIklan" component={Footer1}/>
         </div>
     </div>
 </HashRouter>
