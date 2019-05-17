@@ -9,7 +9,8 @@ import ProdukUnggulan_list from './screens/ProdukUnggulan_list'
 import ListIklan from './screens/iklan/ListIklan';
 import DetailIklan from './screens/iklan/DetailIklan';
 import Footer from './components/Footer';
- 
+ import Footer1 from './components/Footer1.js';
+
 class Main extends Component {
   render() {
     return (
@@ -40,7 +41,9 @@ class Main extends Component {
         </div>
 
         <div className="footer" >
-            <Footer/>
+                <Route exact path="/" component={Footer}/>
+                <Route exact path="/ListIklan" component={Footer}/>
+                 <Route exact path="/DetailIklan" component={Footer1}/>
         </div>
     </div>
 </HashRouter>

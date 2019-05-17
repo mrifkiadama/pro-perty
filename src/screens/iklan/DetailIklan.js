@@ -11,6 +11,8 @@ import queryString from 'query-string';
 import "react-image-gallery/styles/css/image-gallery.css";
 import millify from 'millify';
 
+import Footer1 from '../../components/Footer1';
+
 import ScrollToTop from 'react-router-scroll-top'   
 export default class DetailIklan extends Component {
     state = {
@@ -95,6 +97,24 @@ export default class DetailIklan extends Component {
                     <div className="content">
                         <Row>
                             <Col xs={12} md={6} style={{paddingBottom:0}}>
+                               <Row style={{listStyleType: "none",paddingLeft:15, color:'#95a5a6' }}>
+                              
+                              <li style={{paddingTop:5}}>
+                              <span style={{fontSize:15}}>
+                              Home
+                              <i className="material-icons" style={{fontSize:15}}>
+                                  chevron_right
+                              </i> {this.state.data.kategori}</span></li>
+                              <li style={{paddingTop:5}}><span><i className="material-icons" style={{fontSize:15}}>
+                                  chevron_right
+                              </i> <Moment format="D MMM YYYY" withTitle>
+                                {this.state.data.date}
+                                  </Moment></span></li>
+                              <li style={{paddingTop:5}}><span><i className="material-icons" style={{fontSize:15}}>
+                                  chevron_right
+                              </i> {this.state.data.provinsi}</span></li>
+                            </Row>
+                               
                                <Image src="" fluid />
                                 <ImageGallery items={images} lazyLoad={true} useTranslate3D={false} showBullets={false} showNav={false} showPlayButton={false} className="caraousel_image" 
                                  onError={(e) => {
@@ -173,7 +193,7 @@ export default class DetailIklan extends Component {
                   <Col xs={12} md={3} style={{padding:0}}>
                     <div className="content"style={{padding:0, paddingBottom:20}}>
                           <Col xs={12} md={12} style={{background:"#f09712",paddingLeft:20, paddingTop:20, paddingBottom:20}}>
-                            <h3 style={{color:'white'}}>Dijual</h3>
+                            <h3 style={{color:'white',fontSize:18}}>Dijual</h3>
                             <h4 style={{color:'white'}}>Rp {this.ambilangka(this.state.harga)} </h4>  
                           </Col>
                           <Col xs={12} md={12} style={{paddingTop:20}}>
@@ -252,7 +272,9 @@ export default class DetailIklan extends Component {
                   </Col>
             </Row>
           </Container>
+
       </React.Fragment>
+
            
       );
   }

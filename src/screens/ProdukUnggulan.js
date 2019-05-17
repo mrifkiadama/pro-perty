@@ -129,7 +129,7 @@ class ProdukUnggulan extends Component {
                               </Card.Title>
                             </Card.ImgOverlay>
                     <Card.Body>
-                        <Card.Title style={{fontWeight:50,float:'left'}}>
+                        <Card.Title style={{fontWeight:50,float:'left',color:'#000000'}}>
 
                         {(value.title.substring(0,25)+'..')}
                       
@@ -139,7 +139,7 @@ class ProdukUnggulan extends Component {
                         <br/>
                         <Card.Subtitle className="mb-2 text-muted" style={{float:'left',marginTop:-20}}>{value.alamat}</Card.Subtitle>
                         <br/>
-                        <Card.Title style={{color: '#3D87F3',marginTop:25, marginBottom:25, fontWeight:500, float: 'right'}}> 
+                        <Card.Title style={{color: '#cc0001',marginTop:25, marginBottom:25, fontWeight:500, float: 'right'}}> 
                         Rp {this.ambilangka(value.harga)}
                             <h2 style={{fontSize:15, color: '#95a5a6', float: 'right', marginLeft:10}}> {this.nego(value.nego)}</h2>
                         </Card.Title>
