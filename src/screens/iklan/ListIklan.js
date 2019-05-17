@@ -57,12 +57,12 @@ componentWillReceiveProps(nextProps) {
 
   async componentWillMount() {
 
-     let url_ku = this.props.location.search;
+    let url_ku = this.props.location.search;
      let params = queryString.parse(url_ku);
      console.log(params);
       console.log(params.alamat)
-      let url_api='http://apiproday.herokuapp.com/api/v1/search?kategori=semua&kab=semua&'
-      let provinsi='provinsi='+params.alamat
+      let url_api='http://apiproday.herokuapp.com/api/v1/search?kategori=semua&provinsi=semua&'
+      let provinsi='kab='+params.alamat
       let cari ='&cari='+params.cari
       this.setState({url:url_api+provinsi+cari})
       console.log(this.state.url_data)

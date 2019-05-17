@@ -39,12 +39,13 @@ constructor(props) {
 
    render() {
     const Pop_alamat = (
-  <Popover  title="Pilih Lokasi">
+<Popover  title="Pilih Lokasi">
             <ListGroup variant="flush" id="alamat">
-              <ListGroup.Item onClick={() => this.setState({alamat:'Semua'})}>Semua Lokasi</ListGroup.Item>
-              <ListGroup.Item onClick={() => this.setState({alamat:'Yogyakarta'})}>Yogyakarta</ListGroup.Item>
-              <ListGroup.Item onClick={() => this.setState({alamat:'KulonProgo'})}>KulonProgo</ListGroup.Item>
-              <ListGroup.Item onClick={() => this.setState({alamat:'Bantul'})}>Bantul</ListGroup.Item>
+                <ListGroup.Item onClick={() => this.setState({alamat:'semua'})}>Semua Lokasi</ListGroup.Item>
+              <ListGroup.Item onClick={() => this.setState({alamat:'jogja'})}>Yogya Kota</ListGroup.Item>
+              <ListGroup.Item onClick={() => this.setState({alamat:'kulonprogo'})}>KulonProgo</ListGroup.Item>
+              <ListGroup.Item onClick={() => this.setState({alamat:'bantul'})}>Bantul</ListGroup.Item>
+              <ListGroup.Item onClick={() => this.setState({alamat:'bantul'})}>Sleman</ListGroup.Item>
             </ListGroup>
   </Popover>
     );
