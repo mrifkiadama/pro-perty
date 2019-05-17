@@ -169,7 +169,7 @@ export default class DetailIklan extends Component {
                                         <Row>
                                         <img style={{width:45,height:45, marginRight:10, marginLeft:10}} src={Tanah}  alt="Luas Tanah"/>
                                         
-                                        <span style={{color:'#95a5a6',fontSize:14,marginLeft:10}}> Luas Tanah<br/><span style={{color:'#000000'}}>{this.state.data.luas}</span></span>
+                                        <span style={{color:'#95a5a6',fontSize:14,marginLeft:10}}> Luas Tanah<br/><span style={{color:'#000000'}}>{this.state.data.luas} m<sup>2</sup></span></span>
                                         </Row>
                                     </Col>
                                     <Col xs={12} md={6} style={{paddingBottom:10,padding:20}}>
@@ -284,7 +284,7 @@ export default class DetailIklan extends Component {
 
                                 <Col xs={3} md={2}>
                                 <ul style={{listStyleType: "none", marginLeft:10, paddingLeft:0,fontSize:14,floar:'right'}}>
-                                  <li>: {this.state.data.luas}</li>
+                                  <li>: {this.state.data.luas} m<sup>2</sup></li>
                                   <li>: {this.cek_nego(this.state.data.nego)}</li>
                                 </ul>
                                 </Col>
