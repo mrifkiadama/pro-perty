@@ -145,7 +145,7 @@ export default class DetailIklan extends Component {
                             
 
                         <Row>
-                            <Col xs={12} md={6} style={{paddingBottom:0,marginTop:0,paddingTop:10}}>
+                            <Col xs={12} md={6} style={{paddingBottom:0,marginTop:10,paddingTop:20}}>
                                
                                
                                 <ImageGallery items={images} lazyLoad={true} useTranslate3D={false} showBullets={false} showNav={false} showPlayButton={false} className="caraousel_image" 
@@ -156,7 +156,7 @@ export default class DetailIklan extends Component {
                                
                             </Col> 
 
-                            <Col xs={12} md={6} style={{background:'white',paddingTop:10}}>                            
+                            <Col xs={12} md={6} style={{background:'white',paddingTop:30}}>                            
                                 <h4 style={{fontSize:18}}>{this.state.data.title}</h4>
                                 <h6 style={{fontSize:14,paddingTop:10 , color:'#95a5a6'}}>{this.state.data.alamat}</h6>
                                 <hr/>
@@ -184,7 +184,7 @@ export default class DetailIklan extends Component {
                                 <hr/>
                                 <Row>
                                 <Col>
-                                <i className="material-icons"  style={{float:'left', color:'#3D87F3'}}>
+                                <i className="material-icons"  style={{float:'left', color:'#dc3545'}}>
                                 flag  
                                 </i>
                                  <h6 style={{float:'left',color:'#cc0001'}}>Laporkan Iklan </h6>
