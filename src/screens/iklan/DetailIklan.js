@@ -1,7 +1,8 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 import React, { Component } from 'react';
 import AsyncFetch from '../../api/AsyncFetch'
 import { Container, Row, Col} from 'react-bootstrap';
-import { Button,Badge} from 'react-bootstrap';
+import { Button} from 'react-bootstrap';
 import Tanah from '../../assets/icon_content/Group 459.png'
 import Sertifikasi from '../../assets/icon_content/Group 458.png'
 import Pilihan from '../../assets/icon_content/Group 417.png';
@@ -222,7 +223,7 @@ export default class DetailIklan extends Component {
                             <span >Pemasangan Iklan</span>
                                 <Row style={{ marginTop:20,paddingLeft:1}}>
                                     <Col md={3}>
-                                    <img style={{width:45,height:45, marginRight:10, marginLeft:10}} src={Tanah}  alt="Luas Tanah"/>
+                                    <i style={{fontSize:50, marginRight:10, marginLeft:10}} class="material-icons" alt="profile">account_circle</i>
                                     </Col>
                                     <Col md={9}>
                                     <span>{this.state.data.penjual}<br/>
@@ -236,13 +237,17 @@ export default class DetailIklan extends Component {
                                    <hr/>
 
                           </Col>
-                          <Col>
-                            <Badge variant="info" style={{width:'100%', marginBottom:10,height:40, paddingTop:10,}} >{this.state.data.nomor_hp}</Badge>
-                            </Col>
-                          <Col>
-                            <Button variant="danger" style={{width:'100%',color:'white'}}>
-                             <a href={contact} > <b style={{color:'white'}}>Hubungi Penjual</b></a>
-                            </Button>
+                              <Col>
+                                <Button variant="danger" style={{width:'100%',color:'white',marginBottom:10}}>
+                                  <a href={contact} > <b style={{color:'white'}}>{this.state.data.nomor_hp}</b></a>
+                                </Button>
+                              </Col>
+                            <Col>
+                              <Button variant="success" style={{width:'100%',color:'white'}}>
+                                // eslint-disable-next-line jsx-a11y/alt-text
+                                <img src="https://img.icons8.com/color/48/000000/whatsapp.png" style={{widt:25,height:25}}></img>
+                              </Button>
+
                             </Col>
                     </div>   
                   </Col>

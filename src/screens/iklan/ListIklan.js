@@ -9,6 +9,7 @@ import ScrollToTop from 'react-router-scroll-top'
 import Oops from '../../assets/oops.png'
 import {Link } from "react-router-dom";
 
+
 export default class ListIklan extends Component {
 
   state = {
@@ -93,7 +94,7 @@ componentWillReceiveProps(nextProps) {
            }
     if (this.state.data && this.state.data.length) {
        return (
-            <React.Fragment>
+            <React.Fragment id="div-center">
          
 
     <ScrollToTop/>
@@ -108,9 +109,9 @@ componentWillReceiveProps(nextProps) {
        
             { this.state.isLoad && children.map((value, index) => 
 
-            <React.Fragment key={value.id}>
+            <React.Fragment key={value.id} >
               <center>
-             <Card style={{ width: '17rem',margin:5}} id={'ListIklan'}>
+             <Card style={{ width: '17rem',margin:5}} id={'ListIklan'} className="div-center">
                     
                         <Card.Img  style={{height:200}} variant="top" src={value.foto} onError={(e) => {
                         e.target.src = 'https://increasify.com.au/wp-content/uploads/2016/08/default-image.png' // some replacement image
