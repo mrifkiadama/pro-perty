@@ -255,14 +255,14 @@ export default class DetailIklan extends Component {
                         </div>
                     </Col>
 
-                     <Col xs={12} md={12} >
+                     <Col xs={12} md={12}   >
                         <Row style={{marginLeft:22}}>
-                            <Col xs={12} md={2} style={{marginRight:0, marginLeft:0, paddingLeft:0, paddingRight:0}}>
+                            <Col xs={12} md={2}  style={{marginRight:0, marginLeft:0, paddingLeft:0, paddingRight:0}}>
                             <span><b>Spesifikasi</b></span>
                             </Col>
-                            <Col xs={12} md={10} style={{marginRight:0, marginLeft:0, paddingLeft:0, paddingRight:0}}>
-                              <Row xs={12} md={6} style={{marginRight:0,paddingLeft:-0}}>
-                                <Col xs={3} md={2}>
+                            <Col xs={12} md={10}   style={{marginRight:0, marginLeft:0, paddingLeft:0, paddingRight:0}}>
+                              <Row xs={12} md={6}   style={{marginRight:0,paddingLeft:-0}}>
+                                <Col xs={3} md={2} xs >
                                 <ul style={{listStyleType: "none", marginLeft:0, paddingLeft:0,fontSize:14,color:'#95a5a6'}}>
                                   <li>Kategori</li>
                                   <li>Jenis Iklan</li>
@@ -271,7 +271,7 @@ export default class DetailIklan extends Component {
                                 </ul>
                                 </Col>
 
-                                <Col xs={3} md={5}>
+                                <Col xs={4} md={4} xs={7}>
                                 <ul style={{listStyleType: "none", marginLeft:10, paddingLeft:0,fontSize:14,floar:'right'}}>
                                   <li>: {this.state.data.kategori}</li>
                                   <li>: {this.cek_nego(this.state.data.nego)}</li>
@@ -280,7 +280,7 @@ export default class DetailIklan extends Component {
                                 </ul>
                                 </Col>
 
-                                <Col xs={3} md={2}>
+                                <Col xs={3} md={2} xs={5}>
                                 <ul style={{listStyleType: "none", marginLeft:0, paddingLeft:0,fontSize:14,color:'#95a5a6'}}>
                                   <li>Luas Tanah</li>
                                   <li>Sertifikasi</li>
@@ -288,17 +288,12 @@ export default class DetailIklan extends Component {
                                 </ul>
                                 </Col>
 
-                                <Col xs={3} md={2}>
+                                <Col xs={3} md={2} xs={7}>
                                 <ul style={{listStyleType: "none", marginLeft:10, paddingLeft:0,fontSize:14,floar:'right'}}>
                                   <li>: {this.state.data.luas} m<sup>2</sup></li>
                                   <li>: {this.cek_nego(this.state.data.nego)}</li>
                                 </ul>
                                 </Col>
-                                
-                                
-                                
-                                
-                              
                               </Row>
                             </Col>
                         </Row>
