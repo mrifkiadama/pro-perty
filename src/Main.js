@@ -9,7 +9,8 @@ import ProdukUnggulan_list from './screens/ProdukUnggulan_list'
 import ListIklan from './screens/iklan/ListIklan';
 import DetailIklan from './screens/iklan/DetailIklan';
 import Footer from './components/Footer';
- import Footer1 from './components/Footer1.js';
+import Footer1 from './components/Footer1.js';
+import ProdukRandom from "./screens/ProdukRandom";
 
 class Main extends Component {
   render() {
@@ -28,6 +29,7 @@ class Main extends Component {
                     <Route exact path="/ListIklan" component={ProdukUnggulan_list}/>
                     <Route exact path="/ListIklan" component={ListIklan}/>
                      <Route exact path="/DetailIklan" component={DetailIklan}/> 
+                     <Route exact path="/" component={ProdukRandom}/>
                 </Row>
             </Container>
             

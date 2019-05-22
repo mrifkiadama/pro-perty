@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import AsyncFetch from '../../api/AsyncFetch'
 import { Container, Row, Col} from 'react-bootstrap';
 import { Image,Button,Badge} from 'react-bootstrap';
-import Tanah from '../../assets/icon_content/Group 459.png'
-import Sertifikasi from '../../assets/icon_content/Group 458.png'
-import Pilihan from '../../assets/icon_content/Group 417.png';
+import Tanah from '../../assets/icon_detail_iklan/luas tanah.png'
+import Sertifikasi from '../../assets/icon_detail_iklan/sertifikat.png';
+import Pilihan from '../../assets/icon_detail_iklan/detail_iklan.png';
 import ImageGallery from 'react-image-gallery';
 import Moment from 'react-moment';
 import queryString from 'query-string';
 import "react-image-gallery/styles/css/image-gallery.css";
 import millify from 'millify';
 import {Link } from "react-router-dom";
+import Flag from "../..//assets/icon_detail_iklan/flag.png"
 
 
 import ScrollToTop from 'react-router-scroll-top'   
@@ -190,10 +191,9 @@ export default class DetailIklan extends Component {
                                 <hr/>
                                 <Row>
                                 <Col>
-                                <i className="material-icons"  style={{float:'left', color:'#dc3545'}}>
-                                flag  
-                                </i>
-                                 <h6 style={{float:'left',color:'#cc0001'}}>Laporkan Iklan </h6>
+                                <img style={{float:'left',width:25,height:25, marginRight:10, marginLeft:10}} src={Flag}  alt="Flag"/>
+                                        
+                                 <h6 style={{float:'left',color:'#cc0001',fontSize:16 }}>Laporkan Iklan </h6>
                                 </Col>
                                 <Col>
                                 <h6 style={{float:'right', color:'#95a5a6'}}>
@@ -251,7 +251,7 @@ export default class DetailIklan extends Component {
                     <div className="content">
                     <Col xs={12} md={12} style={{marginTop:0}}>
                         <div style={{marginLeft:-20, marginRight:-20, marginBottom:30, marginTop:0}}>
-                            <h4><img style={{width:25,height:25, marginTop:0, marginRight:10, marginLeft:0}} src={Pilihan}  alt="logo"/> Detail Properti</h4>
+                            <h4><img style={{width:45,height:45, marginTop:0, marginRight:10, marginLeft:0}} src={Pilihan}  alt="logo"/> Detail Properti</h4>
                         </div>
                     </Col>
 
@@ -262,7 +262,7 @@ export default class DetailIklan extends Component {
                             </Col>
                             <Col xs={12} md={10}   style={{marginRight:0, marginLeft:0, paddingLeft:0, paddingRight:0}}>
                               <Row xs={12} md={6}   style={{marginRight:0,paddingLeft:-0}}>
-                                <Col xs={3} md={2} xs >
+                                <Col xs={3} md={2} xs={5} >
                                 <ul style={{listStyleType: "none", marginLeft:0, paddingLeft:0,fontSize:14,color:'#95a5a6'}}>
                                   <li>Kategori</li>
                                   <li>Jenis Iklan</li>

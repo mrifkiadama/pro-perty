@@ -3,13 +3,13 @@ import millify from 'millify';
 import { Card, Button, Container } from 'react-bootstrap';
 import { Row} from 'react-bootstrap';
 //import HeaderSearch from '../../components/HeaderSearch'
-import AsyncFetch from '../../api/AsyncFetch'
+import AsyncFetch from '../api/AsyncFetch'
 import queryString from 'query-string';
 import ScrollToTop from 'react-router-scroll-top'   
-import Oops from '../../assets/oops.png'
+import Oops from '../assets/oops.png'
 import {Link } from "react-router-dom";
 
-export default class ListIklan extends Component {
+export default class ProdukRandom extends Component {
 
   state = {
       data: [],
@@ -61,10 +61,8 @@ componentWillReceiveProps(nextProps) {
      let params = queryString.parse(url_ku);
      console.log(params);
       console.log(params.alamat)
-      let url_api='http://apiproday.herokuapp.com/api/v1/search?kategori=semua&provinsi=semua&'
-      let provinsi='kab='+params.alamat
-      let cari ='&cari='+params.cari
-      this.setState({url:url_api+provinsi+cari})
+      let url_api='http://apiproday.herokuapp.com/api/v1/Random_advert'
+      this.setState({url:url_api})
       console.log(this.state.url_data)
   }
   ambilangka(value) {
@@ -101,7 +99,6 @@ componentWillReceiveProps(nextProps) {
                 <Container style={{ paddingLeft:10}} className="list_div_search">   
 
                 <div style={{marginLeft:15}} className="list_div_search">
-                <h5 style={{color:'#95a5a6'}}>Ditemukan : {this.state.data.length} Data</h5>
                 <br/>
                 <Row> 
         { ! this.state.isLoad && <label>Loading ... </label> }
