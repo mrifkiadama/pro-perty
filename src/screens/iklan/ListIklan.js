@@ -120,12 +120,10 @@ componentWillReceiveProps(nextProps) {
                 <Row> 
         { ! this.state.isLoad && <label>Loading ... </label> }
        
-            { this.state.isLoad && children.map((value, index) => 
-
+            { this.state.isLoad && children.slice(0, this.state.visible).map((value, index) => 
             <React.Fragment >
               <center>
-              {this.state.data.slice(0, this.state.visible).map((data, index) => {
-                 return(
+                
              <Card style={{ width: '17rem',margin:5}} id={'ListIklan'} key={value.id}>
                     
                         <Card.Img  style={{height:200}} variant="top" src={value.foto} onError={(e) => {
@@ -156,12 +154,12 @@ componentWillReceiveProps(nextProps) {
                         
                     </Card.Body>
                 </Card>
-                );
-                })}
+              
+               
                 </center>
             </React.Fragment>
 
-            )  }
+              )  }
             </Row>
             {this.state.visible < this.state.data.length &&
                 <button onClick={this.loadMore} type="button" className="load-more">Load more</button>}
