@@ -11,12 +11,14 @@ import DetailIklan from './screens/iklan/DetailIklan';
 import Footer from './components/Footer';
 import Footer1 from './components/Footer1.js';
 import ProdukRandom from "./screens/ProdukRandom";
+import ScrollUpButton from "react-scroll-up-button";
 
 class Main extends Component {
   render() {
     return (
     <HashRouter>
     <div>
+    <ScrollUpButton/>
         <div className="header" >
            <Header/>
              

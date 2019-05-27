@@ -10,13 +10,26 @@ import Oops from '../../assets/oops.png'
 import {Link } from "react-router-dom";
 
 export default class ListIklan extends Component {
+  constructor(props){
+    super(props);
+    
+    this.state = {
+        data: [],
+        visible:4,
+        error:false,
+        url: "",
+        url_data: "",
+        isFlushed: false
+    }
+    this.loadMore = this.loadMore.bind(this);
+}
 
-  state = {
-      data: [],
-      url: "",
-      url_data: "",
-      isFlushed: false
+loadMore() {
+    this.setState((prev) => {
+      return {visible: prev.visible + 4};
+    });
   }
+
 
   setStateAsync(state) {
       return new Promise(resolve => {
@@ -94,6 +107,7 @@ componentWillReceiveProps(nextProps) {
     if (this.state.data && this.state.data.length) {
        return (
             <React.Fragment>
+             
          
 
     <ScrollToTop/>
@@ -108,9 +122,11 @@ componentWillReceiveProps(nextProps) {
        
             { this.state.isLoad && children.map((value, index) => 
 
-            <React.Fragment key={value.id}>
+            <React.Fragment >
               <center>
-             <Card style={{ width: '17rem',margin:5}} id={'ListIklan'}>
+              {this.state.data.slice(0, this.state.visible).map((data, index) => {
+                 return(
+             <Card style={{ width: '17rem',margin:5}} id={'ListIklan'} key={value.id}>
                     
                         <Card.Img  style={{height:200}} variant="top" src={value.foto} onError={(e) => {
                         e.target.src = 'https://increasify.com.au/wp-content/uploads/2016/08/default-image.png' // some replacement image
@@ -140,11 +156,16 @@ componentWillReceiveProps(nextProps) {
                         
                     </Card.Body>
                 </Card>
+                );
+                })}
                 </center>
             </React.Fragment>
 
             )  }
             </Row>
+            {this.state.visible < this.state.data.length &&
+                <button onClick={this.loadMore} type="button" className="load-more">Load more</button>}
+            
             </div>
           </Container>
           </center>

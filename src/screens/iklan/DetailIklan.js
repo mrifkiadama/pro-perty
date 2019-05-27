@@ -1,7 +1,8 @@
+/* eslint-disable react/jsx-no-duplicate-props */
 import React, { Component } from 'react';
 import AsyncFetch from '../../api/AsyncFetch'
 import { Container, Row, Col} from 'react-bootstrap';
-import { Image,Button,Badge} from 'react-bootstrap';
+import { Button,Badge} from 'react-bootstrap';
 import Tanah from '../../assets/icon_detail_iklan/luas tanah.png'
 import Sertifikasi from '../../assets/icon_detail_iklan/sertifikat.png';
 import Pilihan from '../../assets/icon_detail_iklan/detail_iklan.png';

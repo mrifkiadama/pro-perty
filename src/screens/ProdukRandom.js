@@ -10,14 +10,17 @@ import Oops from '../assets/oops.png'
 import {Link } from "react-router-dom";
 
 export default class ProdukRandom extends Component {
+  
 
   state = {
-      data: [],
-      url: "",
-      url_data: "",
-      isFlushed: false
-  }
+        data: [],
+        url: "",
+        url_data: "",
+        isFlushed: false
+    };
+ 
 
+  
   setStateAsync(state) {
       return new Promise(resolve => {
           this.setState(state, resolve)
@@ -61,7 +64,7 @@ componentWillReceiveProps(nextProps) {
      let params = queryString.parse(url_ku);
      console.log(params);
       console.log(params.alamat)
-      let url_api='http://apiproday.herokuapp.com/api/v1/Random_advert'
+      let url_api='https://apiproday.herokuapp.com/api/v1/Random_advert'
       this.setState({url:url_api})
       console.log(this.state.url_data)
   }
@@ -105,9 +108,10 @@ componentWillReceiveProps(nextProps) {
        
             { this.state.isLoad && children.map((value, index) => 
 
-            <React.Fragment key={value.id}>
+            <React.Fragment>
               <center>
-             <Card style={{ width: '17rem',margin:5}} id={'ListIklan'}>
+               
+             <Card style={{ width: '17rem',margin:5 }} id={'ListIklan'} key={value.id}>
                     
                         <Card.Img  style={{height:200}} variant="top" src={value.foto} onError={(e) => {
                         e.target.src = 'https://increasify.com.au/wp-content/uploads/2016/08/default-image.png' // some replacement image
@@ -137,12 +141,14 @@ componentWillReceiveProps(nextProps) {
                         
                     </Card.Body>
                 </Card>
-                </center>
-            </React.Fragment>
+               
+              </center>
+              </React.Fragment>
+                 
 
             )  }
             </Row>
-            </div>
+             </div>
           </Container>
           </center>
       </React.Fragment>
