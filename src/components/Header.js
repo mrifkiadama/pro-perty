@@ -123,7 +123,12 @@ constructor(props) {
                       </InputGroup>
                   </Form>
               </Navbar>
-              </center>          
+               <p style={{marginBottom:0}}>Segala rupa tanah kapling standar perumahan Jogja tersedia disini.Sejumlah 345 lokasi bisa anda pilih.
+              Semuanya berada di spot lokasi terbaik</p>
+              <p>Bandara baru YIA Wates,KEK Borobudur,serta Jogja barat area baru pemekaran kota bisa jadi pertimbangan investasi tanah.</p>
+              
+
+             </center>          
             </Container>
             )
   }

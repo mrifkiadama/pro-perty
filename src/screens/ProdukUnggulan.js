@@ -89,12 +89,12 @@ class ProdukUnggulan extends Component {
 
     return (
          <Col xs={12} md={12}>
-            <div className="content" style={{display:'fixed',marginTop:'-10%',paddingTop:10}}>
+            <div className="content" style={{display:'fixed',marginTop:'-5%',paddingTop:10}}>
               <div style={{marginLeft:-20, marginRight:-20}}>
               <Container>
                <Row>
                <Col>
-                <h5 style={{foat:"left",width:300}}><img style={{width:35,height:35, marginRight:10, marginLeft:0}} src={Pilihan} alt="logo"/> Produk Unggulan</h5>
+                <h5 style={{foat:"left",width:300}}><img style={{width:35,height:35, marginRight:10, marginLeft:0}} src={Pilihan} alt="logo"/> Etalase Produk</h5>
                </Col>
                <Col> 
                 <h6 style={{paddingTop:10, float:'right'}}><a href="#ListIklan?alamat=semua&cari="  style={{textDecoration: 'none'}}>Lihat Semua</a></h6>

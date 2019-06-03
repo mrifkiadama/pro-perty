@@ -130,7 +130,7 @@ componentWillReceiveProps(nextProps) {
                         e.target.src = 'https://increasify.com.au/wp-content/uploads/2016/08/default-image.png' // some replacement image
                          }} />
                  
-                       <Card.Body>
+                       <Card.Body style={{background:'#fcf4f4'}}>
                         <Card.Title style={{fontWeight:300,float:'left'}}>
                         <h6 style={{fontWeight:400,fontSize:'1.1rem'}} className="text_title">
                         {(value.title.substring(0,25)+'..')}
@@ -141,7 +141,7 @@ componentWillReceiveProps(nextProps) {
                         <br/>
                         <Card.Subtitle className="mb-2 text-muted" style={{float:'left',marginTop:-20}}>{value.alamat}</Card.Subtitle>
                         <br/>
-                        <Card.Title style={{color: '#3D87F3',marginTop:25, marginBottom:25, fontWeight:500, float: 'left'}}>
+                        <Card.Title style={{color: '#de5e5e',marginTop:25, marginBottom:25, fontWeight:500, float: 'left'}}>
                         Rp {this.ambilangka(value.harga)}
                             <h2 style={{fontSize:15, color: '#95a5a6', float: 'right', marginLeft:10}}> {this.nego(value.nego)}</h2>
                         </Card.Title>
