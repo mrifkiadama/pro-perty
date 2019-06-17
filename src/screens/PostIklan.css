@@ -1,0 +1,52 @@
+div h4 span{
+    color: red;
+    font-size: 24;
+}
+
+.form{
+    background:#f9f7f7;
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+}
+
+.form::placeholder{
+    font-size: 14px;
+}
+
+.select_option{
+    width: 100%;
+    background-color: #f9f7f7;
+    height: 100%;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.input-form{
+    border: none;
+    border: radius 0;
+    background-color: #f9f7f7;
+
+}
+
+input::placeholder{
+    font-size: 14px;
+}
+
+.kotak{
+  margin: 5px 5px 5px 5px;
+  border: 1px solid  #f9f7f7;
+  width: 140px;
+  height: 140px;
+  background: #f9f7f7;
+}
+Row::after{
+  content: "";
+  display: table;
+  clear: both;
+}

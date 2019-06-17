@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, HashRouter } from "react-router-dom";
+import { BrowserRouter as HashRouter ,Route} from "react-router-dom";
 import {Container, Row} from 'react-bootstrap';
 
 
@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import Footer1 from './components/Footer1.js';
 import ProdukRandom from "./screens/ProdukRandom";
 import ScrollUpButton from "react-scroll-up-button";
+import PostIklan from "./screens/PostIklan";
 
 class Main extends Component {
   render() {
@@ -27,11 +28,12 @@ class Main extends Component {
         <div className="main-content" id="main_content">
             <Container>
                 <Row>
-                    <Route exact path="/" component={ProdukUnggulan}/>
+                    <Route exact path="/" component={PostIklan}/>
+                    {/* <Route exact path="/" component={ProdukUnggulan}/> */}
                     <Route exact path="/ListIklan" component={ProdukUnggulan_list}/>
                     <Route exact path="/ListIklan" component={ListIklan}/>
                      <Route exact path="/DetailIklan" component={DetailIklan}/> 
-                     <Route exact path="/" component={ProdukRandom}/>
+                     {/* <Route exact path="/" component={ProdukRandom}/> */}
                 </Row>
             </Container>
             
