@@ -15,7 +15,7 @@
     "react-router-dom": "^5.0.0",
     "react-router-scroll-top": "^0.1.1",
     "react-router-sitemap": "^1.2.0",
-    "react-scripts": "3.0.1",
+    "react-scripts": "5.0.1",
     "react-scroll-up-button": "^1.6.4",
     "react-slick": "^0.24.0"
   },
